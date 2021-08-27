@@ -33,6 +33,7 @@ namespace Quiz_FelixAsela
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.gboxGenero = new System.Windows.Forms.GroupBox();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFemenino = new System.Windows.Forms.RadioButton();
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -41,7 +42,7 @@ namespace Quiz_FelixAsela
             this.lblNacimiento = new System.Windows.Forms.Label();
             this.lblNacimientofecha = new System.Windows.Forms.Label();
             this.btnReporte = new System.Windows.Forms.Button();
-            this.rbMasculino = new System.Windows.Forms.RadioButton();
+            this.rtxtResults = new System.Windows.Forms.RichTextBox();
             this.gboxGenero.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +86,18 @@ namespace Quiz_FelixAsela
             this.gboxGenero.Text = "Genero";
             this.gboxGenero.Enter += new System.EventHandler(this.gboxGenero_Enter);
             // 
+            // rbMasculino
+            // 
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Location = new System.Drawing.Point(7, 20);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbMasculino.TabIndex = 2;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
+            this.rbMasculino.CheckedChanged += new System.EventHandler(this.rbMasculino_CheckedChanged);
+            // 
             // rbFemenino
             // 
             this.rbFemenino.AutoSize = true;
@@ -125,7 +138,7 @@ namespace Quiz_FelixAsela
             "Ing. Civil"});
             this.chlbEstudio.Location = new System.Drawing.Point(261, 32);
             this.chlbEstudio.Name = "chlbEstudio";
-            this.chlbEstudio.Size = new System.Drawing.Size(156, 94);
+            this.chlbEstudio.Size = new System.Drawing.Size(156, 49);
             this.chlbEstudio.TabIndex = 6;
             this.chlbEstudio.SelectedIndexChanged += new System.EventHandler(this.chlbEstudio_SelectedIndexChanged);
             // 
@@ -165,23 +178,21 @@ namespace Quiz_FelixAsela
             this.btnReporte.UseVisualStyleBackColor = true;
             this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
-            // rbMasculino
+            // rtxtResults
             // 
-            this.rbMasculino.AutoSize = true;
-            this.rbMasculino.Location = new System.Drawing.Point(7, 20);
-            this.rbMasculino.Name = "rbMasculino";
-            this.rbMasculino.Size = new System.Drawing.Size(73, 17);
-            this.rbMasculino.TabIndex = 2;
-            this.rbMasculino.TabStop = true;
-            this.rbMasculino.Text = "Masculino";
-            this.rbMasculino.UseVisualStyleBackColor = true;
-            this.rbMasculino.CheckedChanged += new System.EventHandler(this.rbMasculino_CheckedChanged);
+            this.rtxtResults.Location = new System.Drawing.Point(261, 108);
+            this.rtxtResults.Name = "rtxtResults";
+            this.rtxtResults.Size = new System.Drawing.Size(156, 96);
+            this.rtxtResults.TabIndex = 11;
+            this.rtxtResults.Text = "";
+            this.rtxtResults.TextChanged += new System.EventHandler(this.rtxtResults_TextChanged);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 275);
+            this.Controls.Add(this.rtxtResults);
             this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.lblNacimientofecha);
             this.Controls.Add(this.lblNacimiento);
@@ -218,6 +229,7 @@ namespace Quiz_FelixAsela
         private System.Windows.Forms.Label lblNacimientofecha;
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.RadioButton rbMasculino;
+        private System.Windows.Forms.RichTextBox rtxtResults;
     }
 }
 

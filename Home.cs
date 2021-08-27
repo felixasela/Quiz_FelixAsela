@@ -19,7 +19,7 @@ namespace Quiz_FelixAsela
 
         private void Home_Load(object sender, EventArgs e)
         {
-
+            rtxtResults.Text = "";
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace Quiz_FelixAsela
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            rtxtResults.Text = txtNombre.Text + "";
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +83,11 @@ namespace Quiz_FelixAsela
         }
 
         private void rbFemenino_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtxtResults_TextChanged(object sender, EventArgs e)
         {
 
         }
