@@ -29,21 +29,186 @@ namespace Quiz_FelixAsela
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.gboxGenero = new System.Windows.Forms.GroupBox();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
+            this.rbFemenino = new System.Windows.Forms.RadioButton();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.chlbEstudio = new System.Windows.Forms.CheckedListBox();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.lblNacimiento = new System.Windows.Forms.Label();
+            this.lblNacimientofecha = new System.Windows.Forms.Label();
+            this.btnReporte = new System.Windows.Forms.Button();
+            this.gboxGenero.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(30, 35);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(50, 13);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre :";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(86, 32);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(261, 229);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 33);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Guardar";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // gboxGenero
+            // 
+            this.gboxGenero.Controls.Add(this.rbFemenino);
+            this.gboxGenero.Controls.Add(this.rbMasculino);
+            this.gboxGenero.Location = new System.Drawing.Point(33, 217);
+            this.gboxGenero.Name = "gboxGenero";
+            this.gboxGenero.Size = new System.Drawing.Size(164, 53);
+            this.gboxGenero.TabIndex = 3;
+            this.gboxGenero.TabStop = false;
+            this.gboxGenero.Text = "Genero";
+            // 
+            // rbMasculino
+            // 
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Location = new System.Drawing.Point(7, 20);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbMasculino.TabIndex = 0;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
+            this.rbMasculino.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // rbFemenino
+            // 
+            this.rbFemenino.AutoSize = true;
+            this.rbFemenino.Location = new System.Drawing.Point(86, 20);
+            this.rbFemenino.Name = "rbFemenino";
+            this.rbFemenino.Size = new System.Drawing.Size(71, 17);
+            this.rbFemenino.TabIndex = 1;
+            this.rbFemenino.TabStop = true;
+            this.rbFemenino.Text = "Femenino";
+            this.rbFemenino.UseVisualStyleBackColor = true;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(30, 70);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(50, 13);
+            this.lblApellido.TabIndex = 4;
+            this.lblApellido.Text = "Apellido :";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(86, 67);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.TabIndex = 5;
+            // 
+            // chlbEstudio
+            // 
+            this.chlbEstudio.CheckOnClick = true;
+            this.chlbEstudio.FormattingEnabled = true;
+            this.chlbEstudio.Items.AddRange(new object[] {
+            "Ing. Sistemas e Informatica",
+            "Ing. Industrial",
+            "Ing. Civil"});
+            this.chlbEstudio.Location = new System.Drawing.Point(261, 32);
+            this.chlbEstudio.Name = "chlbEstudio";
+            this.chlbEstudio.Size = new System.Drawing.Size(156, 94);
+            this.chlbEstudio.TabIndex = 6;
+            // 
+            // dtpNacimiento
+            // 
+            this.dtpNacimiento.Location = new System.Drawing.Point(33, 142);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(196, 20);
+            this.dtpNacimiento.TabIndex = 7;
+            // 
+            // lblNacimiento
+            // 
+            this.lblNacimiento.AutoSize = true;
+            this.lblNacimiento.Location = new System.Drawing.Point(30, 126);
+            this.lblNacimiento.Name = "lblNacimiento";
+            this.lblNacimiento.Size = new System.Drawing.Size(181, 13);
+            this.lblNacimiento.TabIndex = 8;
+            this.lblNacimiento.Text = "Seleccione su fecha de Nacimiento :";
+            // 
+            // lblNacimientofecha
+            // 
+            this.lblNacimientofecha.AutoSize = true;
+            this.lblNacimientofecha.Location = new System.Drawing.Point(37, 177);
+            this.lblNacimientofecha.Name = "lblNacimientofecha";
+            this.lblNacimientofecha.Size = new System.Drawing.Size(0, 13);
+            this.lblNacimientofecha.TabIndex = 9;
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.Location = new System.Drawing.Point(343, 229);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(74, 33);
+            this.btnReporte.TabIndex = 10;
+            this.btnReporte.Text = "Reporte";
+            this.btnReporte.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(443, 275);
+            this.Controls.Add(this.btnReporte);
+            this.Controls.Add(this.lblNacimientofecha);
+            this.Controls.Add(this.lblNacimiento);
+            this.Controls.Add(this.dtpNacimiento);
+            this.Controls.Add(this.chlbEstudio);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.lblApellido);
+            this.Controls.Add(this.gboxGenero);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblNombre);
             this.Name = "Home";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
+            this.gboxGenero.ResumeLayout(false);
+            this.gboxGenero.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.GroupBox gboxGenero;
+        private System.Windows.Forms.RadioButton rbMasculino;
+        private System.Windows.Forms.RadioButton rbFemenino;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.CheckedListBox chlbEstudio;
+        private System.Windows.Forms.DateTimePicker dtpNacimiento;
+        private System.Windows.Forms.Label lblNacimiento;
+        private System.Windows.Forms.Label lblNacimientofecha;
+        private System.Windows.Forms.Button btnReporte;
     }
 }
 
