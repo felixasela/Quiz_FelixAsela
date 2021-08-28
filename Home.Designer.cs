@@ -37,13 +37,18 @@ namespace Quiz_FelixAsela
             this.rbFemenino = new System.Windows.Forms.RadioButton();
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.chlbEstudio = new System.Windows.Forms.CheckedListBox();
             this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.lblNacimiento = new System.Windows.Forms.Label();
-            this.lblNacimientofecha = new System.Windows.Forms.Label();
+            this.lblfecha = new System.Windows.Forms.Label();
             this.btnReporte = new System.Windows.Forms.Button();
             this.rtxtResults = new System.Windows.Forms.RichTextBox();
+            this.gpboxFacultad = new System.Windows.Forms.GroupBox();
+            this.chkCivil = new System.Windows.Forms.CheckBox();
+            this.chkIndustrial = new System.Windows.Forms.CheckBox();
+            this.chkSistemas = new System.Windows.Forms.CheckBox();
+            this.lblGeneroselec = new System.Windows.Forms.Label();
             this.gboxGenero.SuspendLayout();
+            this.gpboxFacultad.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -78,7 +83,7 @@ namespace Quiz_FelixAsela
             // 
             this.gboxGenero.Controls.Add(this.rbMasculino);
             this.gboxGenero.Controls.Add(this.rbFemenino);
-            this.gboxGenero.Location = new System.Drawing.Point(33, 210);
+            this.gboxGenero.Location = new System.Drawing.Point(33, 193);
             this.gboxGenero.Name = "gboxGenero";
             this.gboxGenero.Size = new System.Drawing.Size(164, 53);
             this.gboxGenero.TabIndex = 3;
@@ -93,7 +98,6 @@ namespace Quiz_FelixAsela
             this.rbMasculino.Name = "rbMasculino";
             this.rbMasculino.Size = new System.Drawing.Size(73, 17);
             this.rbMasculino.TabIndex = 2;
-            this.rbMasculino.TabStop = true;
             this.rbMasculino.Text = "Masculino";
             this.rbMasculino.UseVisualStyleBackColor = true;
             this.rbMasculino.CheckedChanged += new System.EventHandler(this.rbMasculino_CheckedChanged);
@@ -105,7 +109,6 @@ namespace Quiz_FelixAsela
             this.rbFemenino.Name = "rbFemenino";
             this.rbFemenino.Size = new System.Drawing.Size(71, 17);
             this.rbFemenino.TabIndex = 1;
-            this.rbFemenino.TabStop = true;
             this.rbFemenino.Text = "Femenino";
             this.rbFemenino.UseVisualStyleBackColor = true;
             this.rbFemenino.CheckedChanged += new System.EventHandler(this.rbFemenino_CheckedChanged);
@@ -128,26 +131,14 @@ namespace Quiz_FelixAsela
             this.txtApellido.TabIndex = 5;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
-            // chlbEstudio
-            // 
-            this.chlbEstudio.CheckOnClick = true;
-            this.chlbEstudio.FormattingEnabled = true;
-            this.chlbEstudio.Items.AddRange(new object[] {
-            "Ing. Sistemas e Informatica",
-            "Ing. Industrial",
-            "Ing. Civil"});
-            this.chlbEstudio.Location = new System.Drawing.Point(261, 32);
-            this.chlbEstudio.Name = "chlbEstudio";
-            this.chlbEstudio.Size = new System.Drawing.Size(156, 49);
-            this.chlbEstudio.TabIndex = 6;
-            this.chlbEstudio.SelectedIndexChanged += new System.EventHandler(this.chlbEstudio_SelectedIndexChanged);
-            // 
             // dtpNacimiento
             // 
+            this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNacimiento.Location = new System.Drawing.Point(33, 142);
             this.dtpNacimiento.Name = "dtpNacimiento";
             this.dtpNacimiento.Size = new System.Drawing.Size(196, 20);
             this.dtpNacimiento.TabIndex = 7;
+            this.dtpNacimiento.Value = new System.DateTime(2021, 8, 27, 0, 0, 0, 0);
             this.dtpNacimiento.ValueChanged += new System.EventHandler(this.dtpNacimiento_ValueChanged);
             // 
             // lblNacimiento
@@ -160,13 +151,13 @@ namespace Quiz_FelixAsela
             this.lblNacimiento.Text = "Seleccione su fecha de Nacimiento :";
             this.lblNacimiento.Click += new System.EventHandler(this.lblNacimiento_Click);
             // 
-            // lblNacimientofecha
+            // lblfecha
             // 
-            this.lblNacimientofecha.AutoSize = true;
-            this.lblNacimientofecha.Location = new System.Drawing.Point(37, 177);
-            this.lblNacimientofecha.Name = "lblNacimientofecha";
-            this.lblNacimientofecha.Size = new System.Drawing.Size(0, 13);
-            this.lblNacimientofecha.TabIndex = 9;
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Location = new System.Drawing.Point(37, 177);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(0, 13);
+            this.lblfecha.TabIndex = 9;
             // 
             // btnReporte
             // 
@@ -187,17 +178,72 @@ namespace Quiz_FelixAsela
             this.rtxtResults.Text = "";
             this.rtxtResults.TextChanged += new System.EventHandler(this.rtxtResults_TextChanged);
             // 
+            // gpboxFacultad
+            // 
+            this.gpboxFacultad.Controls.Add(this.chkCivil);
+            this.gpboxFacultad.Controls.Add(this.chkIndustrial);
+            this.gpboxFacultad.Controls.Add(this.chkSistemas);
+            this.gpboxFacultad.Location = new System.Drawing.Point(250, 12);
+            this.gpboxFacultad.Name = "gpboxFacultad";
+            this.gpboxFacultad.Size = new System.Drawing.Size(167, 90);
+            this.gpboxFacultad.TabIndex = 12;
+            this.gpboxFacultad.TabStop = false;
+            this.gpboxFacultad.Text = "Facultad a la que pertenece: ";
+            this.gpboxFacultad.Enter += new System.EventHandler(this.gpboxFacultad_Enter);
+            // 
+            // chkCivil
+            // 
+            this.chkCivil.AutoSize = true;
+            this.chkCivil.Location = new System.Drawing.Point(11, 65);
+            this.chkCivil.Name = "chkCivil";
+            this.chkCivil.Size = new System.Drawing.Size(66, 17);
+            this.chkCivil.TabIndex = 2;
+            this.chkCivil.Text = "Ing. Civil";
+            this.chkCivil.UseVisualStyleBackColor = true;
+            this.chkCivil.CheckedChanged += new System.EventHandler(this.chkCivil_CheckedChanged);
+            // 
+            // chkIndustrial
+            // 
+            this.chkIndustrial.AutoSize = true;
+            this.chkIndustrial.Location = new System.Drawing.Point(11, 42);
+            this.chkIndustrial.Name = "chkIndustrial";
+            this.chkIndustrial.Size = new System.Drawing.Size(89, 17);
+            this.chkIndustrial.TabIndex = 1;
+            this.chkIndustrial.Text = "Ing. Industrial";
+            this.chkIndustrial.UseVisualStyleBackColor = true;
+            this.chkIndustrial.CheckedChanged += new System.EventHandler(this.chkIndustrial_CheckedChanged);
+            // 
+            // chkSistemas
+            // 
+            this.chkSistemas.AutoSize = true;
+            this.chkSistemas.Location = new System.Drawing.Point(11, 19);
+            this.chkSistemas.Name = "chkSistemas";
+            this.chkSistemas.Size = new System.Drawing.Size(153, 17);
+            this.chkSistemas.TabIndex = 0;
+            this.chkSistemas.Text = "Ing. Sistemas e Informatica";
+            this.chkSistemas.UseVisualStyleBackColor = true;
+            this.chkSistemas.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // lblGeneroselec
+            // 
+            this.lblGeneroselec.AutoSize = true;
+            this.lblGeneroselec.Location = new System.Drawing.Point(33, 250);
+            this.lblGeneroselec.Name = "lblGeneroselec";
+            this.lblGeneroselec.Size = new System.Drawing.Size(0, 13);
+            this.lblGeneroselec.TabIndex = 13;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 275);
+            this.Controls.Add(this.lblGeneroselec);
+            this.Controls.Add(this.gpboxFacultad);
             this.Controls.Add(this.rtxtResults);
             this.Controls.Add(this.btnReporte);
-            this.Controls.Add(this.lblNacimientofecha);
+            this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.lblNacimiento);
             this.Controls.Add(this.dtpNacimiento);
-            this.Controls.Add(this.chlbEstudio);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.gboxGenero);
@@ -209,6 +255,8 @@ namespace Quiz_FelixAsela
             this.Load += new System.EventHandler(this.Home_Load);
             this.gboxGenero.ResumeLayout(false);
             this.gboxGenero.PerformLayout();
+            this.gpboxFacultad.ResumeLayout(false);
+            this.gpboxFacultad.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,13 +271,17 @@ namespace Quiz_FelixAsela
         private System.Windows.Forms.RadioButton rbFemenino;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.CheckedListBox chlbEstudio;
         private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.Label lblNacimiento;
-        private System.Windows.Forms.Label lblNacimientofecha;
+        private System.Windows.Forms.Label lblfecha;
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.RichTextBox rtxtResults;
+        private System.Windows.Forms.GroupBox gpboxFacultad;
+        private System.Windows.Forms.CheckBox chkSistemas;
+        private System.Windows.Forms.CheckBox chkCivil;
+        private System.Windows.Forms.CheckBox chkIndustrial;
+        private System.Windows.Forms.Label lblGeneroselec;
     }
 }
 
